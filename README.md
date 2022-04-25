@@ -38,6 +38,5 @@
 
 * 출력
   * 레이싱 진행 상황 : playResult.getProcessPrint() 
-  * 우승자 한명 이상일 경우 쉼표 : playResult.getResultPrint()
-  * 우승자 한명 : playResult.getResultPrint()
+  * 우승자 한명 이상일 경우 / 우승자 한명 : playResult.getResultPrint()
 
