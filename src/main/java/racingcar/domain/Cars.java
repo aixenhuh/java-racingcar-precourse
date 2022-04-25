@@ -18,7 +18,7 @@ public class Cars {
     public CarStatus play() {
         for(int i = 0; i < cars.size(); i++) {
             Car car = cars.get(i);
-            cars.get(i).run(getRandomNum());
+            isStateComplete(cars.get(i).run(getRandomNum()));
             PlayResult.getProcessPrint(car);
         }
         System.out.println("");
@@ -47,5 +47,10 @@ public class Cars {
     public String getWinnerText(Car car) {
         if(car.getWinner()) return car.getName();
         return "";
+    }
+
+    public boolean isStateComplete(CarStatus carStatus) {
+        if(carStatus == CarStatus.GO || carStatus == CarStatus.STOP) return true;
+        throw new IllegalStateException("자동차 상태 리턴 값이 오류입니다.");
     }
 }

@@ -13,7 +13,7 @@ public class RacingCarController {
 
         System.out.println("시도할 횟수");
 
-        racingCarService.play();
+        racingCarService.racingCarsPlay();
     }
 
 }

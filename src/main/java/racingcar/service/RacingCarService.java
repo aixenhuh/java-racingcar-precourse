@@ -23,13 +23,13 @@ public class RacingCarService {
     public void inputRacingCar(){
         List<Car> list = new ArrayList<>();
         String inputCars = readLine();
-        if(!checkCarNameComma(inputCars)) throw new IllegalArgumentException();
+        if(!checkCarNameComma(inputCars)) throw new IllegalArgumentException("자동차 2대 이상 입력해주세요.");
         String[] split = inputCars.split(",");
         for(int i = 0; i < split.length; i++) list.add(new Car(isNameCheck(split[i])));
         cars = new Cars(list);
     }
 
-    public void play() {
+    public void racingCarsPlay() {
         int tryNum = Integer.parseInt(readLine());
         for(int i = 0; i < tryNum; i++) cars.play();
         compareBestCar();
