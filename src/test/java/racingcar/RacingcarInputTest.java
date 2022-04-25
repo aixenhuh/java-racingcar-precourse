@@ -16,5 +16,4 @@ public class RacingcarInputTest {
         car.setName("pobbby");
         assertThat(car.getName().length() < NAME_MAX_LENGTH).isFalse();
     }
-
 }

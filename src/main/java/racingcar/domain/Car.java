@@ -3,6 +3,7 @@ package racingcar.domain;
 public class Car {
     private String name;
     private String progress;
+    private boolean winner;
 
     public Car(String name) {
         this.name = name;
@@ -38,10 +39,16 @@ public class Car {
         return false;
     }
 
-    public boolean isMaxProcess(int maxNum) {
-        if(maxNum <= this.progress.length()) return true;
-        return false;
+    public void updateWinner(int maxNum) {
+        if(maxNum <= this.progress.length()) setWinner(true);
+        if(maxNum > this.progress.length()) setWinner(false);
     }
 
+    public void setWinner(boolean winner) {
+        this.winner = winner;
+    }
 
+    public boolean getWinner() {
+        return this.winner;
+    }
 }
