@@ -38,9 +38,7 @@ public class RacingCarService {
     public void compareBestCar() {
         maxProgress = cars.getMaxProcess();
         List<String> list = cars.setWinnerCars(maxProgress);
-        for(String name : list) {
-            getWinnerList(name);
-        }
+        for(String name : list) getWinnerList(name);
         PlayResult.getResultPrint(winnerList);
     }
 

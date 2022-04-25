@@ -14,16 +14,27 @@ public class Car {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getProgress() {
         return progress;
     }
 
-    public void plusProgress() {
-        this.progress += "-";
+    public void plusProgress() { this.progress += "-"; }
+
+    public void updateWinner(int maxNum) {
+        if(maxNum <= this.progress.length()) setWinner(true);
+        if(maxNum > this.progress.length()) setWinner(false);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setWinner(boolean winner) {
+        this.winner = winner;
+    }
+
+    public boolean getWinner() {
+        return this.winner;
     }
 
     public CarStatus run(int num) {
@@ -37,18 +48,5 @@ public class Car {
             return true;
         }
         return false;
-    }
-
-    public void updateWinner(int maxNum) {
-        if(maxNum <= this.progress.length()) setWinner(true);
-        if(maxNum > this.progress.length()) setWinner(false);
-    }
-
-    public void setWinner(boolean winner) {
-        this.winner = winner;
-    }
-
-    public boolean getWinner() {
-        return this.winner;
     }
 }
